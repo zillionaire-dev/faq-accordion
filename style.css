@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --very-dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue:  hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--very-dark-grayish-blue);
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  min-height: calc(100vh - 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 3rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-image: url(./images/bg-pattern-mobile.svg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.card-image {
+ position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: -8.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.card-box {
+  display: none;
+}
+
+.accordion {
+  text-align: left;
+  padding-top: 8rem;
+}
+
+.wrapper {
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.accordion h1 {
+  color: var(--very-dark-blue);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.question {
+  margin: 1rem 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.question:hover {
+  color: var(--soft-red);
+}
+
+
+.question::after {
+  content: "v";
+  color: var(--soft-red);
+  position: absolute;
+  right: 1rem;
+}
+
+.answer {
+  margin-bottom: .8rem;
+  line-height: 1.8;
+  height: 0;
+  opacity: 0;
+
+}
+
+.question.open::after {
+  content: "^";
+  color: var(--soft-red);
+ 
+
+}
+
+.question.open + .answer {
+  height: 100%;
+  opacity: 1;
+}
+
+@media (min-width: 900px) {
+  .card {
+    display: flex;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: -13% center;
+    padding: 2rem 2rem 2rem 0;
+    position: relative;
+  }
+
+  .card-image,
+  .accordion{
+    flex: 1;
+  }
+
+  .card-image {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .card-box {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .accordion {
+    padding-top: 2rem;
+    padding-right: 1.5rem;
+    
+  }
+
+  .accordion h1 {
+    text-align: left;
+   
+  }
+
+  .card-image img {
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 400px;
+    padding-right: 2rem;
+    transform: translateX(-4rem);
+  }
+}
