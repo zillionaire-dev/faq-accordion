@@ -19,9 +19,11 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
   color: var(--very-dark-grayish-blue);
-  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
-  background-repeat: no-repeat;
   min-height: calc(100vh - 0.1);
+}
+
+.main-card {
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,6 +117,11 @@ body {
 }
 
 @media (min-width: 900px) {
+  
+  .main-card {
+    padding: 10rem 8rem;
+  }
+  
   .card {
     display: flex;
     background-image: url(./images/bg-pattern-desktop.svg);
