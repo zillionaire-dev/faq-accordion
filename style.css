@@ -75,6 +75,7 @@ body {
 
 .question {
   margin: 1rem 0;
+  padding: 0 1.5rem;
   position: relative;
   cursor: pointer;
 }
@@ -161,4 +162,7 @@ body {
     padding-right: 2rem;
     transform: translateX(-4rem);
   }
+  
+  .question {
+    padding: 0;
 }
